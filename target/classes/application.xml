@@ -15,22 +15,22 @@
 	<context:component-scan
 		base-package="com.HAH.demo.repo,com.HAH.demo.service"></context:component-scan>
 
-	<bean id="methodAspect" class="com.HAH.demo.aspects"></bean>
+	<bean id="methodAspect" class="com.HAH.demo.aspects.MethodAspects"></bean>
 
 	<aop:config>
-		<aop:aspect id="methodAspect" ref="methodAspect">
+		<aop:aspect id="aspect" ref="methodAspect">
 			<aop:before method="beforeInvocation"
-				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
 			<aop:after method="afterInvocation"
-				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
 			<aop:after-returning
 				method="afterReturningInvocation"
-				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
 			<aop:after-throwing
 				method="afterThrowingInvocation"
-				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
 			<aop:around method="aroundInvocation"
-				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
 		</aop:aspect>
 	</aop:config>
 
