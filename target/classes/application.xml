@@ -19,6 +19,18 @@
 
 	<aop:config>
 		<aop:aspect id="methodAspect" ref="methodAspect">
+			<aop:before method="beforeInvocation"
+				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+			<aop:after method="afterInvocation"
+				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+			<aop:after-returning
+				method="afterReturningInvocation"
+				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+			<aop:after-throwing
+				method="afterThrowingInvocation"
+				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
+			<aop:around method="aroundInvocation"
+				pointcut="execution(public * com.HAH.demo.*.*. *(**))" />
 		</aop:aspect>
 	</aop:config>
 
