@@ -15,5 +15,6 @@ public class DemoTest {
 	@Test
 	void demoTest() {
 		demoService.demoService("Hi","I'm from Myanmar","One Day I will come US");
+		demoService.createStudent();
 	}
 }

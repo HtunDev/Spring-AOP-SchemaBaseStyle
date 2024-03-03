@@ -2,6 +2,8 @@ package com.HAH.demo.aspects;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 
+import com.HAH.demo.dto.Student;
+
 public class MethodAspects {
 
 	public void beforeInvocation(String ... args) {
@@ -20,8 +22,9 @@ public class MethodAspects {
 		}
 	}
 
-	public void afterReturningInvocation() {
+	public void afterReturningInvocation(Student student) {
 		System.out.println("After ReturningInvocation");
+		System.out.println(student);
 	}
 
 	public void afterThrowingInvocation() {
