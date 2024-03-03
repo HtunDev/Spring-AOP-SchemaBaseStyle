@@ -4,12 +4,20 @@ import org.aspectj.lang.ProceedingJoinPoint;
 
 public class MethodAspects {
 
-	public void beforeInvocation() {
+	public void beforeInvocation(String ... args) {
 		System.out.println("Before Invocation");
+		
+		for(var arg : args) {
+			System.out.println(arg);
+		}
 	}
 
-	public void afterInvocation() {
+	public void afterInvocation(String [] array) {
 		System.out.println("After Invocation");
+		
+		for(String str : array) {
+			System.out.println(str);
+		}
 	}
 
 	public void afterReturningInvocation() {

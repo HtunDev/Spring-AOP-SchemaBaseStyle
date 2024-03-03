@@ -19,18 +19,9 @@
 
 	<aop:config>
 		<aop:aspect id="aspect" ref="methodAspect">
-			<aop:before method="beforeInvocation"
-				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
-			<aop:after method="afterInvocation"
-				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
-			<aop:after-returning
-				method="afterReturningInvocation"
-				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
-			<aop:after-throwing
-				method="afterThrowingInvocation"
-				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
-			<aop:around method="aroundInvocation"
-				pointcut="execution(public void com.HAH.demo.service.DemoService.demoService())" />
+			<aop:pointcut expression="execution(void demoService(..)) and args(names)" id="express"/>
+			<aop:before method="beforeInvocation" arg-names="names" pointcut-ref="express" />
+			<aop:after method="afterInvocation" arg-names="names" pointcut-ref="express" />
 		</aop:aspect>
 	</aop:config>
 
