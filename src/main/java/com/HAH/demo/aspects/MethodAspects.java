@@ -1,5 +1,7 @@
 package com.HAH.demo.aspects;
 
+import org.aopalliance.intercept.Joinpoint;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 
 import com.HAH.demo.dto.Student;
@@ -27,8 +29,12 @@ public class MethodAspects {
 		System.out.println(student);
 	}
 
-	public void afterThrowingInvocation() {
+	public void afterThrowingInvocation(RuntimeException exception) {
 		System.out.println("After Throwing Invocation");
+		
+		System.out.println(exception.getMessage());
+		System.out.println(exception.getClass());
+		
 	}
 
 	public Object aroundInvocation(ProceedingJoinPoint joinPoint) {
@@ -39,7 +45,7 @@ public class MethodAspects {
 
 			// Before Invocation
 			
-			joinPoint.proceed();
+			joinPoint.proceed();	
 
 			// After Invocation
 			

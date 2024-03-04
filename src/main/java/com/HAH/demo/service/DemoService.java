@@ -15,4 +15,8 @@ public class DemoService {
 	public Student createStudent() {
 		return new Student(1, "Htun Aung Hlaing", "09763651040", "htunaunghlaign177@gmail.com");
 	}
+	
+	public int divided(int a, int b) {
+		return a/b;
+	}
 }

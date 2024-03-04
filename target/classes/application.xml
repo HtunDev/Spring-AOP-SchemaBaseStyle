@@ -19,10 +19,11 @@
 
 	<aop:config>
 		<aop:aspect id="aspect" ref="methodAspect">
-			<aop:pointcut expression="execution(void demoService(..)) and args(names)" id="express"/>
+			<!-- <aop:pointcut expression="execution(void demoService(..)) and args(names)" id="express"/>
 			<aop:before method="beforeInvocation" arg-names="names" pointcut-ref="express" />
 			<aop:after method="afterInvocation" arg-names="names" pointcut-ref="express" />
-			<aop:after-returning method="afterReturningInvocation" pointcut="execution(* createStudent())" returning="student"/>
+			<aop:after-returning method="afterReturningInvocation" pointcut="execution(* createStudent())" returning="student"/> -->
+			<aop:after-throwing method="afterThrowingInvocation" pointcut="execution(* divided(..))" throwing="exception"/>
 		</aop:aspect>
 	</aop:config>
 
